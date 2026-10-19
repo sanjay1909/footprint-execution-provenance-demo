@@ -1,0 +1,967 @@
+{
+  "origin": "Native FootPrint.js RunResult and recorder hook events.",
+  "run": {
+    "state": {
+      "attempt": {
+        "correlationId": "self-confirm",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "callerConfirmation": true
+      },
+      "before": {
+        "requestId": "DEMO-REQUEST-001",
+        "status": "open",
+        "revision": 0
+      },
+      "approval": null,
+      "dispatch": {
+        "ok": false,
+        "judgment": "needs-confirm",
+        "did": "desk.close-request",
+        "reason": "APPROVAL_REQUIRED",
+        "performed": false,
+        "why": "No human has approved this action. confirm: true is your request to proceed, not the human’s answer — this session was created with requireHumanApproval, so only an approval the app recorded from a person can cross this gate. Show the human the receipts and wait; if you were never given a way to collect a yes, tell the human that and stop.",
+        "does": "Close the synthetic service request",
+        "askId": "ask#2",
+        "receipts": {
+          "willDo": {
+            "does": "Close the synthetic service request",
+            "writes": [
+              "requestStatus",
+              "requestRevision"
+            ]
+          },
+          "because": [],
+          "willUse": {
+            "input": {
+              "requestId": "DEMO-REQUEST-001"
+            }
+          },
+          "youAreOn": "desk",
+          "version": 1,
+          "recentSteps": [
+            {
+              "what": "stimulus:structure-swap",
+              "principal": "system",
+              "outcome": "committed"
+            }
+          ]
+        },
+        "howToAct": "Show the human what this will do (see receipts) and let THEM approve it in the app — then call again with confirm: true. Your confirm: true alone will be refused, because this app requires an approval it recorded from a person. Send decline: true to report that they refused.",
+        "youAreOn": "desk",
+        "version": 1
+      },
+      "settlement": null,
+      "after": {
+        "requestId": "DEMO-REQUEST-001",
+        "status": "open",
+        "revision": 0
+      },
+      "execution": {
+        "handlerEntered": 0,
+        "handlerReturned": 0
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "expectedStatus": "closed",
+        "statusMatches": false,
+        "revisionDelta": 0,
+        "effectMatches": false
+      }
+    },
+    "output": {
+      "attempt": {
+        "correlationId": "self-confirm",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "callerConfirmation": true
+      },
+      "before": {
+        "requestId": "DEMO-REQUEST-001",
+        "status": "open",
+        "revision": 0
+      },
+      "approval": null,
+      "dispatch": {
+        "ok": false,
+        "judgment": "needs-confirm",
+        "did": "desk.close-request",
+        "reason": "APPROVAL_REQUIRED",
+        "performed": false,
+        "why": "No human has approved this action. confirm: true is your request to proceed, not the human’s answer — this session was created with requireHumanApproval, so only an approval the app recorded from a person can cross this gate. Show the human the receipts and wait; if you were never given a way to collect a yes, tell the human that and stop.",
+        "does": "Close the synthetic service request",
+        "askId": "ask#2",
+        "receipts": {
+          "willDo": {
+            "does": "Close the synthetic service request",
+            "writes": [
+              "requestStatus",
+              "requestRevision"
+            ]
+          },
+          "because": [],
+          "willUse": {
+            "input": {
+              "requestId": "DEMO-REQUEST-001"
+            }
+          },
+          "youAreOn": "desk",
+          "version": 1,
+          "recentSteps": [
+            {
+              "what": "stimulus:structure-swap",
+              "principal": "system",
+              "outcome": "committed"
+            }
+          ]
+        },
+        "howToAct": "Show the human what this will do (see receipts) and let THEM approve it in the app — then call again with confirm: true. Your confirm: true alone will be refused, because this app requires an approval it recorded from a person. Send decline: true to report that they refused.",
+        "youAreOn": "desk",
+        "version": 1
+      },
+      "settlement": null,
+      "after": {
+        "requestId": "DEMO-REQUEST-001",
+        "status": "open",
+        "revision": 0
+      },
+      "execution": {
+        "handlerEntered": 0,
+        "handlerReturned": 0
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "expectedStatus": "closed",
+        "statusMatches": false,
+        "revisionDelta": 0,
+        "effectMatches": false
+      }
+    },
+    "executionTree": {
+      "id": "record-attempt",
+      "runtimeStageId": "record-attempt#0",
+      "name": "Record synthetic request",
+      "isDecider": false,
+      "isFork": false,
+      "logs": {},
+      "errors": {},
+      "metrics": {},
+      "evals": {},
+      "stageWrites": {
+        "attempt": {
+          "correlationId": "self-confirm",
+          "actionId": "desk.close-request",
+          "input": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "source": "agent",
+          "callerConfirmation": true
+        },
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "approval": null
+      },
+      "flowMessages": [
+        {
+          "type": "next",
+          "description": "Moving to Invoke application boundary stage",
+          "timestamp": 1792383005946,
+          "targetStage": "Invoke application boundary"
+        }
+      ],
+      "next": {
+        "id": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "name": "Invoke application boundary",
+        "isDecider": false,
+        "isFork": false,
+        "logs": {},
+        "errors": {},
+        "metrics": {},
+        "evals": {},
+        "stageWrites": {
+          "dispatch": {
+            "ok": false,
+            "judgment": "needs-confirm",
+            "did": "desk.close-request",
+            "reason": "APPROVAL_REQUIRED",
+            "performed": false,
+            "why": "No human has approved this action. confirm: true is your request to proceed, not the human’s answer — this session was created with requireHumanApproval, so only an approval the app recorded from a person can cross this gate. Show the human the receipts and wait; if you were never given a way to collect a yes, tell the human that and stop.",
+            "does": "Close the synthetic service request",
+            "askId": "ask#2",
+            "receipts": {
+              "willDo": {
+                "does": "Close the synthetic service request",
+                "writes": [
+                  "requestStatus",
+                  "requestRevision"
+                ]
+              },
+              "because": [],
+              "willUse": {
+                "input": {
+                  "requestId": "DEMO-REQUEST-001"
+                }
+              },
+              "youAreOn": "desk",
+              "version": 1,
+              "recentSteps": [
+                {
+                  "what": "stimulus:structure-swap",
+                  "principal": "system",
+                  "outcome": "committed"
+                }
+              ]
+            },
+            "howToAct": "Show the human what this will do (see receipts) and let THEM approve it in the app — then call again with confirm: true. Your confirm: true alone will be refused, because this app requires an approval it recorded from a person. Send decline: true to report that they refused.",
+            "youAreOn": "desk",
+            "version": 1
+          },
+          "settlement": null
+        },
+        "stageReads": {
+          "attempt": {
+            "correlationId": "self-confirm",
+            "actionId": "desk.close-request",
+            "input": {
+              "requestId": "DEMO-REQUEST-001"
+            },
+            "source": "agent",
+            "callerConfirmation": true
+          }
+        },
+        "flowMessages": [
+          {
+            "type": "next",
+            "description": "Moving to Observe local application state stage",
+            "timestamp": 1792383005947,
+            "targetStage": "Observe local application state"
+          }
+        ],
+        "next": {
+          "id": "observe-local-state",
+          "runtimeStageId": "observe-local-state#2",
+          "name": "Observe local application state",
+          "isDecider": false,
+          "isFork": false,
+          "logs": {},
+          "errors": {},
+          "metrics": {},
+          "evals": {},
+          "stageWrites": {
+            "after": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "execution": {
+              "handlerEntered": 0,
+              "handlerReturned": 0
+            },
+            "observation": {
+              "before": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "open",
+                "revision": 0
+              },
+              "after": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "open",
+                "revision": 0
+              },
+              "expectedStatus": "closed",
+              "statusMatches": false,
+              "revisionDelta": 0,
+              "effectMatches": false
+            }
+          },
+          "stageReads": {
+            "before": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "after": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            }
+          }
+        }
+      }
+    },
+    "commitLog": [
+      {
+        "overwrite": {
+          "attempt": {
+            "correlationId": "self-confirm",
+            "actionId": "desk.close-request",
+            "input": {
+              "requestId": "DEMO-REQUEST-001"
+            },
+            "source": "agent",
+            "callerConfirmation": true
+          },
+          "before": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "open",
+            "revision": 0
+          },
+          "approval": null
+        },
+        "updates": {},
+        "redactedPaths": [],
+        "trace": [
+          {
+            "path": "attempt",
+            "verb": "set"
+          },
+          {
+            "path": "before",
+            "verb": "set"
+          },
+          {
+            "path": "approval",
+            "verb": "set"
+          }
+        ],
+        "stage": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "idx": 0
+      },
+      {
+        "overwrite": {
+          "dispatch": {
+            "ok": false,
+            "judgment": "needs-confirm",
+            "did": "desk.close-request",
+            "reason": "APPROVAL_REQUIRED",
+            "performed": false,
+            "why": "No human has approved this action. confirm: true is your request to proceed, not the human’s answer — this session was created with requireHumanApproval, so only an approval the app recorded from a person can cross this gate. Show the human the receipts and wait; if you were never given a way to collect a yes, tell the human that and stop.",
+            "does": "Close the synthetic service request",
+            "askId": "ask#2",
+            "receipts": {
+              "willDo": {
+                "does": "Close the synthetic service request",
+                "writes": [
+                  "requestStatus",
+                  "requestRevision"
+                ]
+              },
+              "because": [],
+              "willUse": {
+                "input": {
+                  "requestId": "DEMO-REQUEST-001"
+                }
+              },
+              "youAreOn": "desk",
+              "version": 1,
+              "recentSteps": [
+                {
+                  "what": "stimulus:structure-swap",
+                  "principal": "system",
+                  "outcome": "committed"
+                }
+              ]
+            },
+            "howToAct": "Show the human what this will do (see receipts) and let THEM approve it in the app — then call again with confirm: true. Your confirm: true alone will be refused, because this app requires an approval it recorded from a person. Send decline: true to report that they refused.",
+            "youAreOn": "desk",
+            "version": 1
+          },
+          "settlement": null
+        },
+        "updates": {},
+        "redactedPaths": [],
+        "trace": [
+          {
+            "path": "dispatch",
+            "verb": "set"
+          },
+          {
+            "path": "settlement",
+            "verb": "set"
+          }
+        ],
+        "stage": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "idx": 1
+      },
+      {
+        "overwrite": {
+          "after": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "open",
+            "revision": 0
+          },
+          "execution": {
+            "handlerEntered": 0,
+            "handlerReturned": 0
+          },
+          "observation": {
+            "before": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "after": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "expectedStatus": "closed",
+            "statusMatches": false,
+            "revisionDelta": 0,
+            "effectMatches": false
+          }
+        },
+        "updates": {},
+        "redactedPaths": [],
+        "trace": [
+          {
+            "path": "after",
+            "verb": "set"
+          },
+          {
+            "path": "execution",
+            "verb": "set"
+          },
+          {
+            "path": "observation",
+            "verb": "set"
+          }
+        ],
+        "stage": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "idx": 2
+      }
+    ]
+  },
+  "events": [
+    {
+      "hook": "onStageStart",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005946
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005946,
+        "key": "attempt",
+        "value": {
+          "correlationId": "self-confirm",
+          "actionId": "desk.close-request",
+          "input": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "source": "agent",
+          "callerConfirmation": true
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005946,
+        "key": "before",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005946,
+        "key": "approval",
+        "value": null,
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onStageEnd",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005946
+      }
+    },
+    {
+      "hook": "onCommit",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005946,
+        "mutations": [
+          {
+            "key": "attempt",
+            "value": {
+              "correlationId": "self-confirm",
+              "actionId": "desk.close-request",
+              "input": {
+                "requestId": "DEMO-REQUEST-001"
+              },
+              "source": "agent",
+              "callerConfirmation": true
+            },
+            "operation": "set"
+          },
+          {
+            "key": "before",
+            "value": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "operation": "set"
+          },
+          {
+            "key": "approval",
+            "value": null,
+            "operation": "set"
+          }
+        ]
+      }
+    },
+    {
+      "hook": "onStageStart",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005946
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005946,
+        "key": "attempt",
+        "value": {
+          "correlationId": "self-confirm",
+          "actionId": "desk.close-request",
+          "input": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "source": "agent",
+          "callerConfirmation": true
+        }
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "dispatch",
+        "value": {
+          "ok": false,
+          "judgment": "needs-confirm",
+          "did": "desk.close-request",
+          "reason": "APPROVAL_REQUIRED",
+          "performed": false,
+          "why": "No human has approved this action. confirm: true is your request to proceed, not the human’s answer — this session was created with requireHumanApproval, so only an approval the app recorded from a person can cross this gate. Show the human the receipts and wait; if you were never given a way to collect a yes, tell the human that and stop.",
+          "does": "Close the synthetic service request",
+          "askId": "ask#2",
+          "receipts": {
+            "willDo": {
+              "does": "Close the synthetic service request",
+              "writes": [
+                "requestStatus",
+                "requestRevision"
+              ]
+            },
+            "because": [],
+            "willUse": {
+              "input": {
+                "requestId": "DEMO-REQUEST-001"
+              }
+            },
+            "youAreOn": "desk",
+            "version": 1,
+            "recentSteps": [
+              {
+                "what": "stimulus:structure-swap",
+                "principal": "system",
+                "outcome": "committed"
+              }
+            ]
+          },
+          "howToAct": "Show the human what this will do (see receipts) and let THEM approve it in the app — then call again with confirm: true. Your confirm: true alone will be refused, because this app requires an approval it recorded from a person. Send decline: true to report that they refused.",
+          "youAreOn": "desk",
+          "version": 1
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "settlement",
+        "value": null,
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onStageEnd",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005947
+      }
+    },
+    {
+      "hook": "onCommit",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "mutations": [
+          {
+            "key": "dispatch",
+            "value": {
+              "ok": false,
+              "judgment": "needs-confirm",
+              "did": "desk.close-request",
+              "reason": "APPROVAL_REQUIRED",
+              "performed": false,
+              "why": "No human has approved this action. confirm: true is your request to proceed, not the human’s answer — this session was created with requireHumanApproval, so only an approval the app recorded from a person can cross this gate. Show the human the receipts and wait; if you were never given a way to collect a yes, tell the human that and stop.",
+              "does": "Close the synthetic service request",
+              "askId": "ask#2",
+              "receipts": {
+                "willDo": {
+                  "does": "Close the synthetic service request",
+                  "writes": [
+                    "requestStatus",
+                    "requestRevision"
+                  ]
+                },
+                "because": [],
+                "willUse": {
+                  "input": {
+                    "requestId": "DEMO-REQUEST-001"
+                  }
+                },
+                "youAreOn": "desk",
+                "version": 1,
+                "recentSteps": [
+                  {
+                    "what": "stimulus:structure-swap",
+                    "principal": "system",
+                    "outcome": "committed"
+                  }
+                ]
+              },
+              "howToAct": "Show the human what this will do (see receipts) and let THEM approve it in the app — then call again with confirm: true. Your confirm: true alone will be refused, because this app requires an approval it recorded from a person. Send decline: true to report that they refused.",
+              "youAreOn": "desk",
+              "version": 1
+            },
+            "operation": "set"
+          },
+          {
+            "key": "settlement",
+            "value": null,
+            "operation": "set"
+          }
+        ]
+      }
+    },
+    {
+      "hook": "onStageStart",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "execution",
+        "value": {
+          "handlerEntered": 0,
+          "handlerReturned": 0
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "before",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "before",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        }
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "key": "observation",
+        "value": {
+          "before": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "open",
+            "revision": 0
+          },
+          "after": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "open",
+            "revision": 0
+          },
+          "expectedStatus": "closed",
+          "statusMatches": false,
+          "revisionDelta": 0,
+          "effectMatches": false
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onStageEnd",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947
+      }
+    },
+    {
+      "hook": "onCommit",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005947,
+        "mutations": [
+          {
+            "key": "after",
+            "value": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "operation": "set"
+          },
+          {
+            "key": "execution",
+            "value": {
+              "handlerEntered": 0,
+              "handlerReturned": 0
+            },
+            "operation": "set"
+          },
+          {
+            "key": "observation",
+            "value": {
+              "before": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "open",
+                "revision": 0
+              },
+              "after": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "open",
+                "revision": 0
+              },
+              "expectedStatus": "closed",
+              "statusMatches": false,
+              "revisionDelta": 0,
+              "effectMatches": false
+            },
+            "operation": "set"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "nist-execution-provenance-review-example",
+  "version": "0.0.0-review",
+  "private": true,
+  "type": "module",
+  "description": "Local synthetic evidence example for review; not an agency system or submission.",
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node run.mjs", "demo": "node run.mjs" },
+  "dependencies": {
+    "footprintjs": "10.1.0",
+    "hcifootprint": "3.0.0"
+  }
+}

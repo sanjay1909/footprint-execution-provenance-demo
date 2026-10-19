@@ -1,0 +1,1017 @@
+{
+  "origin": "Native FootPrint.js RunResult and recorder hook events.",
+  "run": {
+    "state": {
+      "attempt": {
+        "correlationId": "failure-after-write",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "askId": "ask#1"
+      },
+      "before": {
+        "requestId": "DEMO-REQUEST-001",
+        "status": "open",
+        "revision": 0
+      },
+      "approval": {
+        "askId": "ask#1",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "by": "synthetic-reviewer",
+        "kind": "scripted-host-decision"
+      },
+      "dispatch": {
+        "ok": true,
+        "transitionId": "desk.close-request#1",
+        "effectStatusAtReturn": "pending"
+      },
+      "settlement": {
+        "effectStatus": "refused",
+        "outcome": "rejected",
+        "transition": {
+          "id": "desk.close-request#1",
+          "cause": {
+            "kind": "fired",
+            "affordanceId": "desk.close-request",
+            "principal": "agent",
+            "does": "Close the synthetic service request"
+          },
+          "attribution": {
+            "principal": "agent",
+            "basis": "caller-asserted",
+            "certainty": "observed"
+          },
+          "timestamp": 1792383005961,
+          "payload": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "outcome": "rejected",
+          "evidence": [],
+          "fromNode": "desk",
+          "cursorVersion": 1,
+          "askId": "ask#1"
+        },
+        "error": "Synthetic failure reported after the local change"
+      },
+      "after": {
+        "requestId": "DEMO-REQUEST-001",
+        "status": "closed",
+        "revision": 1
+      },
+      "execution": {
+        "handlerEntered": 1,
+        "handlerReturned": 1
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        },
+        "expectedStatus": "closed",
+        "statusMatches": true,
+        "revisionDelta": 1,
+        "effectMatches": true
+      }
+    },
+    "output": {
+      "attempt": {
+        "correlationId": "failure-after-write",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "askId": "ask#1"
+      },
+      "before": {
+        "requestId": "DEMO-REQUEST-001",
+        "status": "open",
+        "revision": 0
+      },
+      "approval": {
+        "askId": "ask#1",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "by": "synthetic-reviewer",
+        "kind": "scripted-host-decision"
+      },
+      "dispatch": {
+        "ok": true,
+        "transitionId": "desk.close-request#1",
+        "effectStatusAtReturn": "pending"
+      },
+      "settlement": {
+        "effectStatus": "refused",
+        "outcome": "rejected",
+        "transition": {
+          "id": "desk.close-request#1",
+          "cause": {
+            "kind": "fired",
+            "affordanceId": "desk.close-request",
+            "principal": "agent",
+            "does": "Close the synthetic service request"
+          },
+          "attribution": {
+            "principal": "agent",
+            "basis": "caller-asserted",
+            "certainty": "observed"
+          },
+          "timestamp": 1792383005961,
+          "payload": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "outcome": "rejected",
+          "evidence": [],
+          "fromNode": "desk",
+          "cursorVersion": 1,
+          "askId": "ask#1"
+        },
+        "error": "Synthetic failure reported after the local change"
+      },
+      "after": {
+        "requestId": "DEMO-REQUEST-001",
+        "status": "closed",
+        "revision": 1
+      },
+      "execution": {
+        "handlerEntered": 1,
+        "handlerReturned": 1
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        },
+        "expectedStatus": "closed",
+        "statusMatches": true,
+        "revisionDelta": 1,
+        "effectMatches": true
+      }
+    },
+    "executionTree": {
+      "id": "record-attempt",
+      "runtimeStageId": "record-attempt#0",
+      "name": "Record synthetic request",
+      "isDecider": false,
+      "isFork": false,
+      "logs": {},
+      "errors": {},
+      "metrics": {},
+      "evals": {},
+      "stageWrites": {
+        "attempt": {
+          "correlationId": "failure-after-write",
+          "actionId": "desk.close-request",
+          "input": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "source": "agent",
+          "askId": "ask#1"
+        },
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "approval": {
+          "askId": "ask#1",
+          "actionId": "desk.close-request",
+          "input": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "by": "synthetic-reviewer",
+          "kind": "scripted-host-decision"
+        }
+      },
+      "flowMessages": [
+        {
+          "type": "next",
+          "description": "Moving to Invoke application boundary stage",
+          "timestamp": 1792383005961,
+          "targetStage": "Invoke application boundary"
+        }
+      ],
+      "next": {
+        "id": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "name": "Invoke application boundary",
+        "isDecider": false,
+        "isFork": false,
+        "logs": {},
+        "errors": {},
+        "metrics": {},
+        "evals": {},
+        "stageWrites": {
+          "dispatch": {
+            "ok": true,
+            "transitionId": "desk.close-request#1",
+            "effectStatusAtReturn": "pending"
+          },
+          "settlement": {
+            "effectStatus": "refused",
+            "outcome": "rejected",
+            "transition": {
+              "id": "desk.close-request#1",
+              "cause": {
+                "kind": "fired",
+                "affordanceId": "desk.close-request",
+                "principal": "agent",
+                "does": "Close the synthetic service request"
+              },
+              "attribution": {
+                "principal": "agent",
+                "basis": "caller-asserted",
+                "certainty": "observed"
+              },
+              "timestamp": 1792383005961,
+              "payload": {
+                "requestId": "DEMO-REQUEST-001"
+              },
+              "outcome": "rejected",
+              "evidence": [],
+              "fromNode": "desk",
+              "cursorVersion": 1,
+              "askId": "ask#1"
+            },
+            "error": "Synthetic failure reported after the local change"
+          }
+        },
+        "stageReads": {
+          "attempt": {
+            "correlationId": "failure-after-write",
+            "actionId": "desk.close-request",
+            "input": {
+              "requestId": "DEMO-REQUEST-001"
+            },
+            "source": "agent",
+            "askId": "ask#1"
+          }
+        },
+        "flowMessages": [
+          {
+            "type": "next",
+            "description": "Moving to Observe local application state stage",
+            "timestamp": 1792383005962,
+            "targetStage": "Observe local application state"
+          }
+        ],
+        "next": {
+          "id": "observe-local-state",
+          "runtimeStageId": "observe-local-state#2",
+          "name": "Observe local application state",
+          "isDecider": false,
+          "isFork": false,
+          "logs": {},
+          "errors": {},
+          "metrics": {},
+          "evals": {},
+          "stageWrites": {
+            "after": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "closed",
+              "revision": 1
+            },
+            "execution": {
+              "handlerEntered": 1,
+              "handlerReturned": 1
+            },
+            "observation": {
+              "before": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "open",
+                "revision": 0
+              },
+              "after": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "closed",
+                "revision": 1
+              },
+              "expectedStatus": "closed",
+              "statusMatches": true,
+              "revisionDelta": 1,
+              "effectMatches": true
+            }
+          },
+          "stageReads": {
+            "before": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "after": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "closed",
+              "revision": 1
+            }
+          }
+        }
+      }
+    },
+    "commitLog": [
+      {
+        "overwrite": {
+          "attempt": {
+            "correlationId": "failure-after-write",
+            "actionId": "desk.close-request",
+            "input": {
+              "requestId": "DEMO-REQUEST-001"
+            },
+            "source": "agent",
+            "askId": "ask#1"
+          },
+          "before": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "open",
+            "revision": 0
+          },
+          "approval": {
+            "askId": "ask#1",
+            "actionId": "desk.close-request",
+            "input": {
+              "requestId": "DEMO-REQUEST-001"
+            },
+            "by": "synthetic-reviewer",
+            "kind": "scripted-host-decision"
+          }
+        },
+        "updates": {},
+        "redactedPaths": [],
+        "trace": [
+          {
+            "path": "attempt",
+            "verb": "set"
+          },
+          {
+            "path": "before",
+            "verb": "set"
+          },
+          {
+            "path": "approval",
+            "verb": "set"
+          }
+        ],
+        "stage": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "idx": 0
+      },
+      {
+        "overwrite": {
+          "dispatch": {
+            "ok": true,
+            "transitionId": "desk.close-request#1",
+            "effectStatusAtReturn": "pending"
+          },
+          "settlement": {
+            "effectStatus": "refused",
+            "outcome": "rejected",
+            "transition": {
+              "id": "desk.close-request#1",
+              "cause": {
+                "kind": "fired",
+                "affordanceId": "desk.close-request",
+                "principal": "agent",
+                "does": "Close the synthetic service request"
+              },
+              "attribution": {
+                "principal": "agent",
+                "basis": "caller-asserted",
+                "certainty": "observed"
+              },
+              "timestamp": 1792383005961,
+              "payload": {
+                "requestId": "DEMO-REQUEST-001"
+              },
+              "outcome": "rejected",
+              "evidence": [],
+              "fromNode": "desk",
+              "cursorVersion": 1,
+              "askId": "ask#1"
+            },
+            "error": "Synthetic failure reported after the local change"
+          }
+        },
+        "updates": {},
+        "redactedPaths": [],
+        "trace": [
+          {
+            "path": "dispatch",
+            "verb": "set"
+          },
+          {
+            "path": "settlement",
+            "verb": "set"
+          }
+        ],
+        "stage": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "idx": 1
+      },
+      {
+        "overwrite": {
+          "after": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "closed",
+            "revision": 1
+          },
+          "execution": {
+            "handlerEntered": 1,
+            "handlerReturned": 1
+          },
+          "observation": {
+            "before": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "after": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "closed",
+              "revision": 1
+            },
+            "expectedStatus": "closed",
+            "statusMatches": true,
+            "revisionDelta": 1,
+            "effectMatches": true
+          }
+        },
+        "updates": {},
+        "redactedPaths": [],
+        "trace": [
+          {
+            "path": "after",
+            "verb": "set"
+          },
+          {
+            "path": "execution",
+            "verb": "set"
+          },
+          {
+            "path": "observation",
+            "verb": "set"
+          }
+        ],
+        "stage": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "idx": 2
+      }
+    ]
+  },
+  "events": [
+    {
+      "hook": "onStageStart",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005961
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005961,
+        "key": "attempt",
+        "value": {
+          "correlationId": "failure-after-write",
+          "actionId": "desk.close-request",
+          "input": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "source": "agent",
+          "askId": "ask#1"
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005961,
+        "key": "before",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005961,
+        "key": "approval",
+        "value": {
+          "askId": "ask#1",
+          "actionId": "desk.close-request",
+          "input": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "by": "synthetic-reviewer",
+          "kind": "scripted-host-decision"
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onStageEnd",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005961
+      }
+    },
+    {
+      "hook": "onCommit",
+      "event": {
+        "stageName": "Record synthetic request",
+        "stageId": "record-attempt",
+        "runtimeStageId": "record-attempt#0",
+        "pipelineId": "",
+        "timestamp": 1792383005961,
+        "mutations": [
+          {
+            "key": "attempt",
+            "value": {
+              "correlationId": "failure-after-write",
+              "actionId": "desk.close-request",
+              "input": {
+                "requestId": "DEMO-REQUEST-001"
+              },
+              "source": "agent",
+              "askId": "ask#1"
+            },
+            "operation": "set"
+          },
+          {
+            "key": "before",
+            "value": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "operation": "set"
+          },
+          {
+            "key": "approval",
+            "value": {
+              "askId": "ask#1",
+              "actionId": "desk.close-request",
+              "input": {
+                "requestId": "DEMO-REQUEST-001"
+              },
+              "by": "synthetic-reviewer",
+              "kind": "scripted-host-decision"
+            },
+            "operation": "set"
+          }
+        ]
+      }
+    },
+    {
+      "hook": "onStageStart",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005961
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005961,
+        "key": "attempt",
+        "value": {
+          "correlationId": "failure-after-write",
+          "actionId": "desk.close-request",
+          "input": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "source": "agent",
+          "askId": "ask#1"
+        }
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "dispatch",
+        "value": {
+          "ok": true,
+          "transitionId": "desk.close-request#1",
+          "effectStatusAtReturn": "pending"
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "settlement",
+        "value": {
+          "effectStatus": "refused",
+          "outcome": "rejected",
+          "transition": {
+            "id": "desk.close-request#1",
+            "cause": {
+              "kind": "fired",
+              "affordanceId": "desk.close-request",
+              "principal": "agent",
+              "does": "Close the synthetic service request"
+            },
+            "attribution": {
+              "principal": "agent",
+              "basis": "caller-asserted",
+              "certainty": "observed"
+            },
+            "timestamp": 1792383005961,
+            "payload": {
+              "requestId": "DEMO-REQUEST-001"
+            },
+            "outcome": "rejected",
+            "evidence": [],
+            "fromNode": "desk",
+            "cursorVersion": 1,
+            "askId": "ask#1"
+          },
+          "error": "Synthetic failure reported after the local change"
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onStageEnd",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005962
+      }
+    },
+    {
+      "hook": "onCommit",
+      "event": {
+        "stageName": "Invoke application boundary",
+        "stageId": "invoke-boundary",
+        "runtimeStageId": "invoke-boundary#1",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "mutations": [
+          {
+            "key": "dispatch",
+            "value": {
+              "ok": true,
+              "transitionId": "desk.close-request#1",
+              "effectStatusAtReturn": "pending"
+            },
+            "operation": "set"
+          },
+          {
+            "key": "settlement",
+            "value": {
+              "effectStatus": "refused",
+              "outcome": "rejected",
+              "transition": {
+                "id": "desk.close-request#1",
+                "cause": {
+                  "kind": "fired",
+                  "affordanceId": "desk.close-request",
+                  "principal": "agent",
+                  "does": "Close the synthetic service request"
+                },
+                "attribution": {
+                  "principal": "agent",
+                  "basis": "caller-asserted",
+                  "certainty": "observed"
+                },
+                "timestamp": 1792383005961,
+                "payload": {
+                  "requestId": "DEMO-REQUEST-001"
+                },
+                "outcome": "rejected",
+                "evidence": [],
+                "fromNode": "desk",
+                "cursorVersion": 1,
+                "askId": "ask#1"
+              },
+              "error": "Synthetic failure reported after the local change"
+            },
+            "operation": "set"
+          }
+        ]
+      }
+    },
+    {
+      "hook": "onStageStart",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "execution",
+        "value": {
+          "handlerEntered": 1,
+          "handlerReturned": 1
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "before",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "before",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "after",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        }
+      }
+    },
+    {
+      "hook": "onRead",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "before",
+        "value": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        }
+      }
+    },
+    {
+      "hook": "onWrite",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "key": "observation",
+        "value": {
+          "before": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "open",
+            "revision": 0
+          },
+          "after": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "closed",
+            "revision": 1
+          },
+          "expectedStatus": "closed",
+          "statusMatches": true,
+          "revisionDelta": 1,
+          "effectMatches": true
+        },
+        "operation": "set"
+      }
+    },
+    {
+      "hook": "onStageEnd",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962
+      }
+    },
+    {
+      "hook": "onCommit",
+      "event": {
+        "stageName": "Observe local application state",
+        "stageId": "observe-local-state",
+        "runtimeStageId": "observe-local-state#2",
+        "pipelineId": "",
+        "timestamp": 1792383005962,
+        "mutations": [
+          {
+            "key": "after",
+            "value": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "closed",
+              "revision": 1
+            },
+            "operation": "set"
+          },
+          {
+            "key": "execution",
+            "value": {
+              "handlerEntered": 1,
+              "handlerReturned": 1
+            },
+            "operation": "set"
+          },
+          {
+            "key": "observation",
+            "value": {
+              "before": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "open",
+                "revision": 0
+              },
+              "after": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "closed",
+                "revision": 1
+              },
+              "expectedStatus": "closed",
+              "statusMatches": true,
+              "revisionDelta": 1,
+              "effectMatches": true
+            },
+            "operation": "set"
+          }
+        ]
+      }
+    }
+  ]
+}

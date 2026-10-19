@@ -1,0 +1,698 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-10-19T04:10:05.965Z",
+  "title": "Execution provenance for a synthetic, human-approved service-request update",
+  "runtime": {
+    "node": "v24.19.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "capture": {
+    "delivery": "inline",
+    "recorderErrors": 0,
+    "configuredSampling": false,
+    "deferredQueue": false
+  },
+  "dependencies": {
+    "footprintjs": {
+      "version": "10.1.0",
+      "resolved": "https://registry.npmjs.org/footprintjs/-/footprintjs-10.1.0.tgz",
+      "integrity": "sha512-ZV8y5tsiF5fwd8A5ef64Gu4V4VutXa5LQMtcmE8rxrO98ZJhoQksVbDqIoy2k/NiuTzgLnrrN6Zn5fA5Cs/++A=="
+    },
+    "foottrace": {
+      "version": "1.5.0",
+      "resolved": "https://registry.npmjs.org/foottrace/-/foottrace-1.5.0.tgz",
+      "integrity": "sha512-Km1QWa2uuO2IroqTQSynwCsNkE9GcrmbodUScYDQGBUtQMHgJpOKuKZpo3NzrIYySVw3iJ6aRoElU+KEtAPX6A=="
+    },
+    "hcifootprint": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/hcifootprint/-/hcifootprint-3.0.0.tgz",
+      "integrity": "sha512-lE4VH9cJE9NqzvWninVHeX556d2GltvhAUtleaiN60tRUTDu41Aw1oDiVG7BJqb2n71TNbKwIsIgo0H7r1eqXA=="
+    }
+  },
+  "sourceIdentity": {
+    "run.mjs": {
+      "sha256": "ef824f33df030c3cc5883a5579a581787e29479fceef12c3af40d389bceaa975"
+    },
+    "package-lock.json": {
+      "sha256": "e1b2eba353dd0560bcf19c0a55d5fc30c587eca55374ce77f08e9f6429944391"
+    }
+  },
+  "summary": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0
+  },
+  "scenarios": [
+    {
+      "id": "missing-approval",
+      "title": "No recorded approval",
+      "expected": "APPROVAL_REQUIRED",
+      "attempt": {
+        "correlationId": "missing-approval",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent"
+      },
+      "approval": null,
+      "dispatch": {
+        "ok": false,
+        "reason": "APPROVAL_REQUIRED",
+        "affordanceId": "desk.close-request"
+      },
+      "settlement": null,
+      "execution": {
+        "handlerEntered": 0,
+        "handlerReturned": 0
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "expectedStatus": "closed",
+        "statusMatches": false,
+        "revisionDelta": 0,
+        "effectMatches": false
+      },
+      "pass": true,
+      "nativeArtifacts": {
+        "hci": "native/missing-approval.hci.json",
+        "footprint": "native/missing-approval.footprint.json",
+        "handler": "native/missing-approval.handler.json"
+      },
+      "footprintStageIds": [
+        "record-attempt",
+        "invoke-boundary",
+        "observe-local-state"
+      ]
+    },
+    {
+      "id": "self-confirm",
+      "title": "Caller supplies confirm:true",
+      "expected": "APPROVAL_REQUIRED",
+      "attempt": {
+        "correlationId": "self-confirm",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "callerConfirmation": true
+      },
+      "approval": null,
+      "dispatch": {
+        "ok": false,
+        "judgment": "needs-confirm",
+        "did": "desk.close-request",
+        "reason": "APPROVAL_REQUIRED",
+        "performed": false,
+        "why": "No human has approved this action. confirm: true is your request to proceed, not the human’s answer — this session was created with requireHumanApproval, so only an approval the app recorded from a person can cross this gate. Show the human the receipts and wait; if you were never given a way to collect a yes, tell the human that and stop.",
+        "does": "Close the synthetic service request",
+        "askId": "ask#2",
+        "receipts": {
+          "willDo": {
+            "does": "Close the synthetic service request",
+            "writes": [
+              "requestStatus",
+              "requestRevision"
+            ]
+          },
+          "because": [],
+          "willUse": {
+            "input": {
+              "requestId": "DEMO-REQUEST-001"
+            }
+          },
+          "youAreOn": "desk",
+          "version": 1,
+          "recentSteps": [
+            {
+              "what": "stimulus:structure-swap",
+              "principal": "system",
+              "outcome": "committed"
+            }
+          ]
+        },
+        "howToAct": "Show the human what this will do (see receipts) and let THEM approve it in the app — then call again with confirm: true. Your confirm: true alone will be refused, because this app requires an approval it recorded from a person. Send decline: true to report that they refused.",
+        "youAreOn": "desk",
+        "version": 1
+      },
+      "settlement": null,
+      "execution": {
+        "handlerEntered": 0,
+        "handlerReturned": 0
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "expectedStatus": "closed",
+        "statusMatches": false,
+        "revisionDelta": 0,
+        "effectMatches": false
+      },
+      "pass": true,
+      "nativeArtifacts": {
+        "hci": "native/self-confirm.hci.json",
+        "footprint": "native/self-confirm.footprint.json",
+        "handler": "native/self-confirm.handler.json"
+      },
+      "footprintStageIds": [
+        "record-attempt",
+        "invoke-boundary",
+        "observe-local-state"
+      ]
+    },
+    {
+      "id": "changed-input",
+      "title": "Approval presented for different input",
+      "expected": "APPROVAL_MISMATCH",
+      "attempt": {
+        "correlationId": "changed-input",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-002"
+        },
+        "source": "agent",
+        "askId": "ask#1"
+      },
+      "approval": {
+        "askId": "ask#1",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "by": "synthetic-reviewer",
+        "kind": "scripted-host-decision"
+      },
+      "dispatch": {
+        "ok": false,
+        "reason": "APPROVAL_MISMATCH",
+        "affordanceId": "desk.close-request",
+        "askId": "ask#1",
+        "differs": "input"
+      },
+      "settlement": null,
+      "execution": {
+        "handlerEntered": 0,
+        "handlerReturned": 0
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "expectedStatus": "closed",
+        "statusMatches": false,
+        "revisionDelta": 0,
+        "effectMatches": false
+      },
+      "pass": true,
+      "nativeArtifacts": {
+        "hci": "native/changed-input.hci.json",
+        "footprint": "native/changed-input.footprint.json",
+        "handler": "native/changed-input.handler.json"
+      },
+      "footprintStageIds": [
+        "record-attempt",
+        "invoke-boundary",
+        "observe-local-state"
+      ]
+    },
+    {
+      "id": "changed-action",
+      "title": "Approval presented for a different action",
+      "expected": "APPROVAL_MISMATCH",
+      "attempt": {
+        "correlationId": "changed-action",
+        "actionId": "desk.archive-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "askId": "ask#1"
+      },
+      "approval": {
+        "askId": "ask#1",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "by": "synthetic-reviewer",
+        "kind": "scripted-host-decision"
+      },
+      "dispatch": {
+        "ok": false,
+        "reason": "APPROVAL_MISMATCH",
+        "affordanceId": "desk.archive-request",
+        "askId": "ask#1",
+        "differs": "action"
+      },
+      "settlement": null,
+      "execution": {
+        "handlerEntered": 0,
+        "handlerReturned": 0
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "expectedStatus": "closed",
+        "statusMatches": false,
+        "revisionDelta": 0,
+        "effectMatches": false
+      },
+      "pass": true,
+      "nativeArtifacts": {
+        "hci": "native/changed-action.hci.json",
+        "footprint": "native/changed-action.footprint.json",
+        "handler": "native/changed-action.handler.json"
+      },
+      "footprintStageIds": [
+        "record-attempt",
+        "invoke-boundary",
+        "observe-local-state"
+      ]
+    },
+    {
+      "id": "approved-once",
+      "title": "Recorded approval permits one local change",
+      "expected": "ONE_APPROVED_CHANGE",
+      "attempt": {
+        "correlationId": "approved-once",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "askId": "ask#1"
+      },
+      "approval": {
+        "askId": "ask#1",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "by": "synthetic-reviewer",
+        "kind": "scripted-host-decision"
+      },
+      "dispatch": {
+        "ok": true,
+        "transitionId": "desk.close-request#1",
+        "effectStatusAtReturn": "pending"
+      },
+      "settlement": {
+        "effectStatus": "performed",
+        "outcome": "committed",
+        "transition": {
+          "id": "desk.close-request#1",
+          "cause": {
+            "kind": "fired",
+            "affordanceId": "desk.close-request",
+            "principal": "agent",
+            "does": "Close the synthetic service request"
+          },
+          "attribution": {
+            "principal": "agent",
+            "basis": "named-by-report",
+            "certainty": "observed"
+          },
+          "timestamp": 1792383005954,
+          "payload": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "outcome": "committed",
+          "evidence": [],
+          "fromNode": "desk",
+          "cursorVersion": 1,
+          "askId": "ask#1",
+          "effectVerified": true,
+          "toNode": "desk"
+        },
+        "verifyHeld": true
+      },
+      "execution": {
+        "handlerEntered": 1,
+        "handlerReturned": 1
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        },
+        "expectedStatus": "closed",
+        "statusMatches": true,
+        "revisionDelta": 1,
+        "effectMatches": true
+      },
+      "pass": true,
+      "nativeArtifacts": {
+        "hci": "native/approved-once.hci.json",
+        "footprint": "native/approved-once.footprint.json",
+        "handler": "native/approved-once.handler.json"
+      },
+      "footprintStageIds": [
+        "record-attempt",
+        "invoke-boundary",
+        "observe-local-state"
+      ]
+    },
+    {
+      "id": "approval-reuse",
+      "title": "Reusing a consumed approval",
+      "expected": "APPROVAL_SPENT",
+      "attempt": {
+        "correlationId": "approval-reuse",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "askId": "ask#1"
+      },
+      "approval": {
+        "askId": "ask#1",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "by": "synthetic-reviewer",
+        "kind": "scripted-host-decision"
+      },
+      "dispatch": {
+        "ok": false,
+        "reason": "APPROVAL_SPENT",
+        "affordanceId": "desk.close-request",
+        "askId": "ask#1"
+      },
+      "settlement": null,
+      "execution": {
+        "handlerEntered": 0,
+        "handlerReturned": 0
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        },
+        "expectedStatus": "closed",
+        "statusMatches": true,
+        "revisionDelta": 0,
+        "effectMatches": false
+      },
+      "pass": true,
+      "nativeArtifacts": {
+        "hci": "native/approval-reuse.hci.json",
+        "footprint": "native/approval-reuse.footprint.json",
+        "handler": "native/approval-reuse.handler.json"
+      },
+      "footprintStageIds": [
+        "record-attempt",
+        "invoke-boundary",
+        "observe-local-state"
+      ]
+    },
+    {
+      "id": "returned-without-effect",
+      "title": "Handler returns, expected state is absent",
+      "expected": "DISPATCHED_BUT_EXPECTED_STATE_ABSENT",
+      "attempt": {
+        "correlationId": "returned-without-effect",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "askId": "ask#1"
+      },
+      "approval": {
+        "askId": "ask#1",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "by": "synthetic-reviewer",
+        "kind": "scripted-host-decision"
+      },
+      "dispatch": {
+        "ok": true,
+        "transitionId": "desk.close-request#1",
+        "effectStatusAtReturn": "pending"
+      },
+      "settlement": {
+        "effectStatus": "refused",
+        "outcome": "committed",
+        "transition": {
+          "id": "desk.close-request#1",
+          "cause": {
+            "kind": "fired",
+            "affordanceId": "desk.close-request",
+            "principal": "agent",
+            "does": "Close the synthetic service request"
+          },
+          "attribution": {
+            "principal": "agent",
+            "basis": "named-by-report",
+            "certainty": "observed"
+          },
+          "timestamp": 1792383005959,
+          "payload": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "outcome": "committed",
+          "evidence": [],
+          "fromNode": "desk",
+          "cursorVersion": 1,
+          "askId": "ask#1",
+          "effectVerified": true,
+          "toNode": "desk"
+        },
+        "error": {
+          "reason": "VERIFY_FAILED",
+          "explanation": "This action declares a verify contract — a condition the app itself said must hold once the action had settled. It did not hold: the app was asked whether this happened, and answered no."
+        },
+        "verifyHeld": false
+      },
+      "execution": {
+        "handlerEntered": 1,
+        "handlerReturned": 1
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "expectedStatus": "closed",
+        "statusMatches": false,
+        "revisionDelta": 0,
+        "effectMatches": false
+      },
+      "pass": true,
+      "nativeArtifacts": {
+        "hci": "native/returned-without-effect.hci.json",
+        "footprint": "native/returned-without-effect.footprint.json",
+        "handler": "native/returned-without-effect.handler.json"
+      },
+      "footprintStageIds": [
+        "record-attempt",
+        "invoke-boundary",
+        "observe-local-state"
+      ]
+    },
+    {
+      "id": "failure-after-write",
+      "title": "Handler reports failure after a local state change",
+      "expected": "FAILURE_WITH_LOCAL_EFFECT",
+      "attempt": {
+        "correlationId": "failure-after-write",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "agent",
+        "askId": "ask#1"
+      },
+      "approval": {
+        "askId": "ask#1",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "by": "synthetic-reviewer",
+        "kind": "scripted-host-decision"
+      },
+      "dispatch": {
+        "ok": true,
+        "transitionId": "desk.close-request#1",
+        "effectStatusAtReturn": "pending"
+      },
+      "settlement": {
+        "effectStatus": "refused",
+        "outcome": "rejected",
+        "transition": {
+          "id": "desk.close-request#1",
+          "cause": {
+            "kind": "fired",
+            "affordanceId": "desk.close-request",
+            "principal": "agent",
+            "does": "Close the synthetic service request"
+          },
+          "attribution": {
+            "principal": "agent",
+            "basis": "caller-asserted",
+            "certainty": "observed"
+          },
+          "timestamp": 1792383005961,
+          "payload": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "outcome": "rejected",
+          "evidence": [],
+          "fromNode": "desk",
+          "cursorVersion": 1,
+          "askId": "ask#1"
+        },
+        "error": "Synthetic failure reported after the local change"
+      },
+      "execution": {
+        "handlerEntered": 1,
+        "handlerReturned": 1
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        },
+        "expectedStatus": "closed",
+        "statusMatches": true,
+        "revisionDelta": 1,
+        "effectMatches": true
+      },
+      "pass": true,
+      "nativeArtifacts": {
+        "hci": "native/failure-after-write.hci.json",
+        "footprint": "native/failure-after-write.footprint.json",
+        "handler": "native/failure-after-write.handler.json"
+      },
+      "footprintStageIds": [
+        "record-attempt",
+        "invoke-boundary",
+        "observe-local-state"
+      ]
+    },
+    {
+      "id": "direct-handler-boundary",
+      "title": "Raw application method bypasses the session gate",
+      "expected": "OUTSIDE_SESSION_BOUNDARY",
+      "attempt": {
+        "correlationId": "direct-handler-boundary",
+        "actionId": "desk.close-request",
+        "input": {
+          "requestId": "DEMO-REQUEST-001"
+        },
+        "source": "direct-application-call"
+      },
+      "approval": null,
+      "dispatch": {
+        "ok": null,
+        "route": "direct-application-call",
+        "reason": "SESSION_GATE_NOT_CROSSED"
+      },
+      "settlement": null,
+      "execution": {
+        "handlerEntered": 1,
+        "handlerReturned": 1
+      },
+      "observation": {
+        "before": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "open",
+          "revision": 0
+        },
+        "after": {
+          "requestId": "DEMO-REQUEST-001",
+          "status": "closed",
+          "revision": 1
+        },
+        "expectedStatus": "closed",
+        "statusMatches": true,
+        "revisionDelta": 1,
+        "effectMatches": true
+      },
+      "pass": true,
+      "nativeArtifacts": {
+        "hci": "native/direct-handler-boundary.hci.json",
+        "footprint": "native/direct-handler-boundary.footprint.json",
+        "handler": "native/direct-handler-boundary.handler.json"
+      },
+      "footprintStageIds": [
+        "record-attempt",
+        "invoke-boundary",
+        "observe-local-state"
+      ]
+    }
+  ],
+  "limitations": [
+    "All actors, requests and host-attributed approval decisions are synthetic fixtures. No agency, person, identity provider or production data is used.",
+    "source: agent and by: synthetic-reviewer are supplied by the host. HCIFootprint does not authenticate a human or create an authorization service.",
+    "The session policy gates configured high-effect agent invocation paths. Direct application calls and differently trusted principal paths remain host responsibilities.",
+    "Cross-library correlation, scenario labels and expected-state comparisons are demonstration-owned adapter logic, not a new native FootPrint or HCIFootprint feature.",
+    "Records are ordinary local JSON. There is no signature, tamper-evident chain, independent witness, formal proof or external-transaction verification.",
+    "The effect check reads only in-memory application state in the same trusted process; it does not prove a database commit, remote service result or real-world outcome.",
+    "Deterministic scripted calls exercise the application boundary; no model, model-quality claim, agent or model API is involved.",
+    "Nine targeted scenarios are not a comprehensive security evaluation, performance study, NIST certification or evidence of NIST endorsement."
+  ]
+}

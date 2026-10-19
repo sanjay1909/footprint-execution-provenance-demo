@@ -1,0 +1,71 @@
+{
+  "origin": "Native HCIFootprint session API snapshots; wrapper labels are demonstration metadata.",
+  "confirms": [
+    {
+      "kind": "refused",
+      "askId": "refusal#1",
+      "affordanceId": "desk.close-request",
+      "timestamp": 1792383005941,
+      "node": "desk",
+      "version": 1,
+      "stateVersion": 0,
+      "principal": "agent",
+      "rejectionReason": "APPROVAL_REQUIRED",
+      "enforced": true
+    }
+  ],
+  "transitions": [
+    {
+      "id": "stimulus:structure-swap#0",
+      "cause": {
+        "kind": "stimulus",
+        "stimulus": "structure-swap",
+        "principal": "system"
+      },
+      "attribution": {
+        "principal": "system",
+        "basis": "declared-stimulus",
+        "certainty": "observed"
+      },
+      "timestamp": 1792383005938,
+      "outcome": "committed",
+      "effectVerified": "unobservable",
+      "fromNode": "desk",
+      "toNode": "desk",
+      "cursorVersion": 0
+    }
+  ],
+  "commitLog": [
+    {
+      "overwrite": {},
+      "updates": {},
+      "redactedPaths": [],
+      "trace": [],
+      "stage": "stimulus:structure-swap",
+      "stageId": "stimulus:structure-swap",
+      "runtimeStageId": "stimulus:structure-swap#0",
+      "idx": 0
+    }
+  ],
+  "gaps": [
+    {
+      "kind": "fire-rejected",
+      "timestamp": 1792383005941,
+      "node": "desk",
+      "version": 1,
+      "availableActions": [
+        "desk.close-request",
+        "desk.archive-request"
+      ],
+      "availableJourneys": [],
+      "affordanceId": "desk.close-request",
+      "does": "Close the synthetic service request",
+      "rejectionReason": "APPROVAL_REQUIRED",
+      "principal": "agent"
+    }
+  ],
+  "state": {
+    "requestStatus": "open",
+    "requestRevision": 0
+  }
+}

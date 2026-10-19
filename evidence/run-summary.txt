@@ -1,0 +1,11 @@
+FootPrint.js 10.1.0; HCIFootprint 3.0.0; Node v24.19.0
+PASS missing-approval: dispatch=false; reason=APPROVAL_REQUIRED; handler=0/0; effect=false; settlement=-
+PASS self-confirm: dispatch=false; reason=APPROVAL_REQUIRED; handler=0/0; effect=false; settlement=-
+PASS changed-input: dispatch=false; reason=APPROVAL_MISMATCH; handler=0/0; effect=false; settlement=-
+PASS changed-action: dispatch=false; reason=APPROVAL_MISMATCH; handler=0/0; effect=false; settlement=-
+PASS approved-once: dispatch=true; reason=-; handler=1/1; effect=true; settlement=performed
+PASS approval-reuse: dispatch=false; reason=APPROVAL_SPENT; handler=0/0; effect=false; settlement=-
+PASS returned-without-effect: dispatch=true; reason=-; handler=1/1; effect=false; settlement=refused
+PASS failure-after-write: dispatch=true; reason=-; handler=1/1; effect=true; settlement=refused
+PASS direct-handler-boundary: dispatch=null; reason=SESSION_GATE_NOT_CROSSED; handler=1/1; effect=true; settlement=-
+9/9 scenarios passed

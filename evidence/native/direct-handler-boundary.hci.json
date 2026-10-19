@@ -1,0 +1,42 @@
+{
+  "origin": "Native HCIFootprint session API snapshots; wrapper labels are demonstration metadata.",
+  "confirms": [],
+  "transitions": [
+    {
+      "id": "stimulus:structure-swap#0",
+      "cause": {
+        "kind": "stimulus",
+        "stimulus": "structure-swap",
+        "principal": "system"
+      },
+      "attribution": {
+        "principal": "system",
+        "basis": "declared-stimulus",
+        "certainty": "observed"
+      },
+      "timestamp": 1792383005963,
+      "outcome": "committed",
+      "effectVerified": "unobservable",
+      "fromNode": "desk",
+      "toNode": "desk",
+      "cursorVersion": 0
+    }
+  ],
+  "commitLog": [
+    {
+      "overwrite": {},
+      "updates": {},
+      "redactedPaths": [],
+      "trace": [],
+      "stage": "stimulus:structure-swap",
+      "stageId": "stimulus:structure-swap",
+      "runtimeStageId": "stimulus:structure-swap#0",
+      "idx": 0
+    }
+  ],
+  "gaps": [],
+  "state": {
+    "requestStatus": "open",
+    "requestRevision": 0
+  }
+}

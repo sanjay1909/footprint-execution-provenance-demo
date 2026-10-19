@@ -1,0 +1,509 @@
+{
+  "origin": "Native FootPrint.js handler RunResults and recorder hook events. These are instrumented handler observations, not independent external verification.",
+  "setupRunCount": 0,
+  "runs": [
+    {
+      "run": {
+        "state": {
+          "handlerEntered": true,
+          "receivedInput": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "before": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "open",
+            "revision": 0
+          },
+          "after": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "closed",
+            "revision": 1
+          },
+          "faultInjected": false,
+          "handlerReturned": true,
+          "returnValue": {
+            "ok": false,
+            "error": "Synthetic failure reported after the local change",
+            "requestId": "DEMO-REQUEST-001"
+          }
+        },
+        "output": {
+          "handlerEntered": true,
+          "receivedInput": {
+            "requestId": "DEMO-REQUEST-001"
+          },
+          "before": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "open",
+            "revision": 0
+          },
+          "after": {
+            "requestId": "DEMO-REQUEST-001",
+            "status": "closed",
+            "revision": 1
+          },
+          "faultInjected": false,
+          "handlerReturned": true,
+          "returnValue": {
+            "ok": false,
+            "error": "Synthetic failure reported after the local change",
+            "requestId": "DEMO-REQUEST-001"
+          }
+        },
+        "executionTree": {
+          "id": "handler-enter",
+          "runtimeStageId": "handler-enter#0",
+          "name": "Handler entered",
+          "isDecider": false,
+          "isFork": false,
+          "logs": {},
+          "errors": {},
+          "metrics": {},
+          "evals": {},
+          "stageWrites": {
+            "handlerEntered": true,
+            "receivedInput": {
+              "requestId": "DEMO-REQUEST-001"
+            },
+            "before": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            }
+          },
+          "flowMessages": [
+            {
+              "type": "next",
+              "description": "Moving to Apply local status change stage",
+              "timestamp": 1792383005962,
+              "targetStage": "Apply local status change"
+            }
+          ],
+          "next": {
+            "id": "apply-local-change",
+            "runtimeStageId": "apply-local-change#1",
+            "name": "Apply local status change",
+            "isDecider": false,
+            "isFork": false,
+            "logs": {},
+            "errors": {},
+            "metrics": {},
+            "evals": {},
+            "stageWrites": {
+              "after": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "closed",
+                "revision": 1
+              },
+              "faultInjected": false
+            },
+            "stageReads": {
+              "receivedInput": {
+                "requestId": "DEMO-REQUEST-001"
+              }
+            },
+            "flowMessages": [
+              {
+                "type": "next",
+                "description": "Moving to Handler returns stage",
+                "timestamp": 1792383005962,
+                "targetStage": "Handler returns"
+              }
+            ],
+            "next": {
+              "id": "handler-return",
+              "runtimeStageId": "handler-return#2",
+              "name": "Handler returns",
+              "isDecider": false,
+              "isFork": false,
+              "logs": {},
+              "errors": {},
+              "metrics": {},
+              "evals": {},
+              "stageWrites": {
+                "handlerReturned": true,
+                "returnValue": {
+                  "ok": false,
+                  "error": "Synthetic failure reported after the local change",
+                  "requestId": "DEMO-REQUEST-001"
+                }
+              },
+              "stageReads": {
+                "receivedInput": {
+                  "requestId": "DEMO-REQUEST-001"
+                }
+              }
+            }
+          }
+        },
+        "commitLog": [
+          {
+            "overwrite": {
+              "handlerEntered": true,
+              "receivedInput": {
+                "requestId": "DEMO-REQUEST-001"
+              },
+              "before": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "open",
+                "revision": 0
+              }
+            },
+            "updates": {},
+            "redactedPaths": [],
+            "trace": [
+              {
+                "path": "handlerEntered",
+                "verb": "set"
+              },
+              {
+                "path": "receivedInput",
+                "verb": "set"
+              },
+              {
+                "path": "before",
+                "verb": "set"
+              }
+            ],
+            "stage": "Handler entered",
+            "stageId": "handler-enter",
+            "runtimeStageId": "handler-enter#0",
+            "idx": 0
+          },
+          {
+            "overwrite": {
+              "after": {
+                "requestId": "DEMO-REQUEST-001",
+                "status": "closed",
+                "revision": 1
+              },
+              "faultInjected": false
+            },
+            "updates": {},
+            "redactedPaths": [],
+            "trace": [
+              {
+                "path": "after",
+                "verb": "set"
+              },
+              {
+                "path": "faultInjected",
+                "verb": "set"
+              }
+            ],
+            "stage": "Apply local status change",
+            "stageId": "apply-local-change",
+            "runtimeStageId": "apply-local-change#1",
+            "idx": 1
+          },
+          {
+            "overwrite": {
+              "handlerReturned": true,
+              "returnValue": {
+                "ok": false,
+                "error": "Synthetic failure reported after the local change",
+                "requestId": "DEMO-REQUEST-001"
+              }
+            },
+            "updates": {},
+            "redactedPaths": [],
+            "trace": [
+              {
+                "path": "handlerReturned",
+                "verb": "set"
+              },
+              {
+                "path": "returnValue",
+                "verb": "set"
+              }
+            ],
+            "stage": "Handler returns",
+            "stageId": "handler-return",
+            "runtimeStageId": "handler-return#2",
+            "idx": 2
+          }
+        ]
+      },
+      "events": [
+        {
+          "hook": "onStageStart",
+          "event": {
+            "stageName": "Handler entered",
+            "stageId": "handler-enter",
+            "runtimeStageId": "handler-enter#0",
+            "pipelineId": "",
+            "timestamp": 1792383005962
+          }
+        },
+        {
+          "hook": "onWrite",
+          "event": {
+            "stageName": "Handler entered",
+            "stageId": "handler-enter",
+            "runtimeStageId": "handler-enter#0",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "key": "handlerEntered",
+            "value": true,
+            "operation": "set"
+          }
+        },
+        {
+          "hook": "onWrite",
+          "event": {
+            "stageName": "Handler entered",
+            "stageId": "handler-enter",
+            "runtimeStageId": "handler-enter#0",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "key": "receivedInput",
+            "value": {
+              "requestId": "DEMO-REQUEST-001"
+            },
+            "operation": "set"
+          }
+        },
+        {
+          "hook": "onWrite",
+          "event": {
+            "stageName": "Handler entered",
+            "stageId": "handler-enter",
+            "runtimeStageId": "handler-enter#0",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "key": "before",
+            "value": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "open",
+              "revision": 0
+            },
+            "operation": "set"
+          }
+        },
+        {
+          "hook": "onStageEnd",
+          "event": {
+            "stageName": "Handler entered",
+            "stageId": "handler-enter",
+            "runtimeStageId": "handler-enter#0",
+            "pipelineId": "",
+            "timestamp": 1792383005962
+          }
+        },
+        {
+          "hook": "onCommit",
+          "event": {
+            "stageName": "Handler entered",
+            "stageId": "handler-enter",
+            "runtimeStageId": "handler-enter#0",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "mutations": [
+              {
+                "key": "handlerEntered",
+                "value": true,
+                "operation": "set"
+              },
+              {
+                "key": "receivedInput",
+                "value": {
+                  "requestId": "DEMO-REQUEST-001"
+                },
+                "operation": "set"
+              },
+              {
+                "key": "before",
+                "value": {
+                  "requestId": "DEMO-REQUEST-001",
+                  "status": "open",
+                  "revision": 0
+                },
+                "operation": "set"
+              }
+            ]
+          }
+        },
+        {
+          "hook": "onStageStart",
+          "event": {
+            "stageName": "Apply local status change",
+            "stageId": "apply-local-change",
+            "runtimeStageId": "apply-local-change#1",
+            "pipelineId": "",
+            "timestamp": 1792383005962
+          }
+        },
+        {
+          "hook": "onRead",
+          "event": {
+            "stageName": "Apply local status change",
+            "stageId": "apply-local-change",
+            "runtimeStageId": "apply-local-change#1",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "key": "receivedInput",
+            "value": {
+              "requestId": "DEMO-REQUEST-001"
+            }
+          }
+        },
+        {
+          "hook": "onWrite",
+          "event": {
+            "stageName": "Apply local status change",
+            "stageId": "apply-local-change",
+            "runtimeStageId": "apply-local-change#1",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "key": "after",
+            "value": {
+              "requestId": "DEMO-REQUEST-001",
+              "status": "closed",
+              "revision": 1
+            },
+            "operation": "set"
+          }
+        },
+        {
+          "hook": "onWrite",
+          "event": {
+            "stageName": "Apply local status change",
+            "stageId": "apply-local-change",
+            "runtimeStageId": "apply-local-change#1",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "key": "faultInjected",
+            "value": false,
+            "operation": "set"
+          }
+        },
+        {
+          "hook": "onStageEnd",
+          "event": {
+            "stageName": "Apply local status change",
+            "stageId": "apply-local-change",
+            "runtimeStageId": "apply-local-change#1",
+            "pipelineId": "",
+            "timestamp": 1792383005962
+          }
+        },
+        {
+          "hook": "onCommit",
+          "event": {
+            "stageName": "Apply local status change",
+            "stageId": "apply-local-change",
+            "runtimeStageId": "apply-local-change#1",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "mutations": [
+              {
+                "key": "after",
+                "value": {
+                  "requestId": "DEMO-REQUEST-001",
+                  "status": "closed",
+                  "revision": 1
+                },
+                "operation": "set"
+              },
+              {
+                "key": "faultInjected",
+                "value": false,
+                "operation": "set"
+              }
+            ]
+          }
+        },
+        {
+          "hook": "onStageStart",
+          "event": {
+            "stageName": "Handler returns",
+            "stageId": "handler-return",
+            "runtimeStageId": "handler-return#2",
+            "pipelineId": "",
+            "timestamp": 1792383005962
+          }
+        },
+        {
+          "hook": "onWrite",
+          "event": {
+            "stageName": "Handler returns",
+            "stageId": "handler-return",
+            "runtimeStageId": "handler-return#2",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "key": "handlerReturned",
+            "value": true,
+            "operation": "set"
+          }
+        },
+        {
+          "hook": "onRead",
+          "event": {
+            "stageName": "Handler returns",
+            "stageId": "handler-return",
+            "runtimeStageId": "handler-return#2",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "key": "receivedInput",
+            "value": {
+              "requestId": "DEMO-REQUEST-001"
+            }
+          }
+        },
+        {
+          "hook": "onWrite",
+          "event": {
+            "stageName": "Handler returns",
+            "stageId": "handler-return",
+            "runtimeStageId": "handler-return#2",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "key": "returnValue",
+            "value": {
+              "ok": false,
+              "error": "Synthetic failure reported after the local change",
+              "requestId": "DEMO-REQUEST-001"
+            },
+            "operation": "set"
+          }
+        },
+        {
+          "hook": "onStageEnd",
+          "event": {
+            "stageName": "Handler returns",
+            "stageId": "handler-return",
+            "runtimeStageId": "handler-return#2",
+            "pipelineId": "",
+            "timestamp": 1792383005962
+          }
+        },
+        {
+          "hook": "onCommit",
+          "event": {
+            "stageName": "Handler returns",
+            "stageId": "handler-return",
+            "runtimeStageId": "handler-return#2",
+            "pipelineId": "",
+            "timestamp": 1792383005962,
+            "mutations": [
+              {
+                "key": "handlerReturned",
+                "value": true,
+                "operation": "set"
+              },
+              {
+                "key": "returnValue",
+                "value": {
+                  "ok": false,
+                  "error": "Synthetic failure reported after the local change",
+                  "requestId": "DEMO-REQUEST-001"
+                },
+                "operation": "set"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

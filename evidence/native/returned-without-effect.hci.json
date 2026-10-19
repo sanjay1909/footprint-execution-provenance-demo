@@ -1,0 +1,134 @@
+{
+  "origin": "Native HCIFootprint session API snapshots; wrapper labels are demonstration metadata.",
+  "confirms": [
+    {
+      "kind": "ask",
+      "askId": "ask#1",
+      "affordanceId": "desk.close-request",
+      "timestamp": 1792383005959,
+      "node": "desk",
+      "version": 0,
+      "principal": "agent",
+      "receipts": {
+        "willDo": {
+          "does": "Close the synthetic service request",
+          "writes": [
+            "requestStatus",
+            "requestRevision"
+          ]
+        },
+        "because": [],
+        "willUse": {
+          "input": {
+            "requestId": "DEMO-REQUEST-001"
+          }
+        },
+        "youAreOn": "desk",
+        "version": 0,
+        "recentSteps": []
+      }
+    },
+    {
+      "kind": "approved",
+      "askId": "ask#1",
+      "affordanceId": "desk.close-request",
+      "timestamp": 1792383005959,
+      "node": "desk",
+      "version": 0,
+      "stateVersion": 0,
+      "principal": "user",
+      "by": "synthetic-reviewer",
+      "note": "Scripted fixture decision; not a person authenticating.",
+      "enforced": true
+    },
+    {
+      "kind": "used",
+      "askId": "ask#1",
+      "affordanceId": "desk.close-request",
+      "timestamp": 1792383005959,
+      "node": "desk",
+      "version": 1,
+      "stateVersion": 0,
+      "principal": "agent",
+      "transitionId": "desk.close-request#1",
+      "enforced": true
+    }
+  ],
+  "transitions": [
+    {
+      "id": "stimulus:structure-swap#0",
+      "cause": {
+        "kind": "stimulus",
+        "stimulus": "structure-swap",
+        "principal": "system"
+      },
+      "attribution": {
+        "principal": "system",
+        "basis": "declared-stimulus",
+        "certainty": "observed"
+      },
+      "timestamp": 1792383005959,
+      "outcome": "committed",
+      "effectVerified": "unobservable",
+      "fromNode": "desk",
+      "toNode": "desk",
+      "cursorVersion": 0
+    },
+    {
+      "id": "desk.close-request#1",
+      "cause": {
+        "kind": "fired",
+        "affordanceId": "desk.close-request",
+        "principal": "agent",
+        "does": "Close the synthetic service request"
+      },
+      "attribution": {
+        "principal": "agent",
+        "basis": "named-by-report",
+        "certainty": "observed"
+      },
+      "timestamp": 1792383005959,
+      "payload": {
+        "requestId": "DEMO-REQUEST-001"
+      },
+      "outcome": "committed",
+      "evidence": [],
+      "fromNode": "desk",
+      "cursorVersion": 1,
+      "askId": "ask#1",
+      "effectVerified": true,
+      "toNode": "desk",
+      "produced": {
+        "handler": "returned",
+        "requestId": "DEMO-REQUEST-001"
+      }
+    }
+  ],
+  "commitLog": [
+    {
+      "overwrite": {},
+      "updates": {},
+      "redactedPaths": [],
+      "trace": [],
+      "stage": "stimulus:structure-swap",
+      "stageId": "stimulus:structure-swap",
+      "runtimeStageId": "stimulus:structure-swap#0",
+      "idx": 0
+    },
+    {
+      "overwrite": {},
+      "updates": {},
+      "redactedPaths": [],
+      "trace": [],
+      "stage": "desk.close-request",
+      "stageId": "desk.close-request",
+      "runtimeStageId": "desk.close-request#1",
+      "idx": 1
+    }
+  ],
+  "gaps": [],
+  "state": {
+    "requestStatus": "open",
+    "requestRevision": 0
+  }
+}
